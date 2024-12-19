@@ -4,11 +4,36 @@ export const App = () => {
  
 
   return (
-    <>
-    <h1>Hello world! Simao</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum magnam hic adipisci consequatur nemo ipsam minima quisquam repellendus. Sequi velit quidem nesciunt numquam iste ex, expedita dolores quod ad nam!</p>
-    <h2>Hello 2</h2>
-    </>
+    <div className="form-container">
+      <div className="form-header">
+        <h1>REPÚBLICA DE MOÇAMBIQUE</h1>
+        <h2>SERVIÇO NACIONAL DE SAÚDE</h2>
+        <h3>MAPA DA JUNTA</h3>
+      </div>
+
+      <form className="form">
+        {/* Input de pesquisa */}
+        <div className="input-group">
+          <input type="text" placeholder="Pesquisar..." className="search-input" />
+          <span className="search-icon">🔍</span>
+        </div>
+
+        {/* Campos de input */}
+        {Array.from({ length: 9 }, (_, index) => (
+          <div className="input-group" key={index}>
+            <label>{`Campo ${index + 1}`}</label>
+            <input type="text" placeholder={`Digite o campo ${index + 1}`} />
+          </div>
+        ))}
+
+        {/* Botões */}
+        <div className="buttons">
+          <button type="submit" className="btn">Enviar</button>
+          <button type="reset" className="btn">Limpar</button>
+          <button type="button" className="btn">Imprimir</button>
+        </div>
+      </form>
+    </div>
   )
 }
 
